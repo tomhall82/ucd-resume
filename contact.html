@@ -80,6 +80,18 @@
           </div>
         </div>
       </div>
+      <!-- EmailJS script -->
+      <script
+        type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+      ></script>
+      <script type="text/javascript">
+        (function () {
+          emailjs.init({
+            publicKey: "CaZErYlehLFANgB99",
+          });
+        })();
+      </script>
     </header>
     <section class="container-fluid">
       <div class="row bg-color-contact">
@@ -90,7 +102,7 @@
           <h5 class="uppercase text-center">Let's work together!</h5>
 
           <div class="center-form">
-            <form>
+            <form onsubmit="return sendMail(this);">
               <input
                 type="text"
                 name="name"
@@ -100,8 +112,8 @@
                 required
               />
               <input
-                type="email"
-                name="email"
+                type="text"
+                name="emailaddress"
                 id="emailaddress"
                 class="form-control"
                 placeholder="Email"
@@ -189,5 +201,6 @@
         </div>
       </div>
     </footer>
+    <script src="assets/js/sendEmail.js"></script>
   </body>
 </html>
